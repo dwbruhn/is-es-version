@@ -12,7 +12,7 @@ if (!/^\d+$/.test(version)) {
 }
 
 for (var i = 3; i < process.argv.length; i++) {
-  var src = fs.readFileSync(process.argv[i])
+  var src = fs.readFileSync(process.argv[i], 'utf8')
   if (!isEsVersion(src, version)) {
     process.exit(1)
   }
